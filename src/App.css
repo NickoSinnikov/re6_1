@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+.form__block, .form__item{
+  display: flex;
+}
+
+.form__item{
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.btn{
+  cursor: pointer;
+  background-color: white;
+  border: solid 2px gainsboro;
+  border-radius: 8px;
+}
