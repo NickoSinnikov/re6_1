@@ -11,7 +11,7 @@ export default function FormItem(props) {
   return (
     <div className="form__item">
       <label>{props.name}</label>
-      <input type="text" onChange={onChange} name={props.name} />
+      <input type="text" onChange={onChange} name={props.name} required />
     </div>
   );
 }

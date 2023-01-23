@@ -37,19 +37,45 @@
   }
 }
 
+*, body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.form__block, .form__item{
+.form__block{
   display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .form__item{
+  display: flex;
   flex-direction: column;
   margin-right: 10px;
 }
 
 .btn{
+  height: 30px;
   cursor: pointer;
   background-color: white;
   border: solid 2px gainsboro;
   border-radius: 8px;
+}
+
+input{
+border: gainsboro solid 2px;
+border-radius: 7px;
+width: 200px;
+height: 30px;
+}
+
+.clock__container{
+  display: flex;
+}
+
+.clockItem{
+  margin-right: 20px;
 }

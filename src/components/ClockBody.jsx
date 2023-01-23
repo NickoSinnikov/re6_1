@@ -1,27 +1,25 @@
 import { type } from '@testing-library/user-event/dist/type';
 import React, { useEffect, useState } from 'react';
-import getDate from '../dopFunction';
+import { getDate } from '../dopFunction';
+import { rightTimeDisplay } from '../dopFunction';
 export default function ClockBody(props) {
   const { timeZone } = props;
-  const [hours, minutes, seconds] = getDate();
+  const [hours, minutes, seconds] = getDate(timeZone);
 
   const [time, setTime] = useState({
-    hours: hours - timeZone,
+    hours: hours,
     minutes: minutes,
     seconds: seconds,
   });
 
-  console.log(getDate());
-
   useEffect(() => {
     const clock = setTimeout(() => {
       setTime({
-        hours: hours - timeZone,
+        hours: hours,
         minutes: minutes,
         seconds: seconds,
       });
     }, 1000);
-    console.log(typeof timeZone);
 
     return () => {
       clearTimeout(clock);
@@ -31,7 +29,11 @@ export default function ClockBody(props) {
   return (
     <div className="clock__body">
       <div className="time">
-        {time.hours + ':' + time.minutes + ':' + time.seconds}
+        {rightTimeDisplay(time.hours) +
+          ':' +
+          rightTimeDisplay(time.minutes) +
+          ':' +
+          rightTimeDisplay(time.seconds)}
       </div>
     </div>
   );

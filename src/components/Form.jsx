@@ -31,7 +31,7 @@ export default function Form(props) {
   };
 
   const onInputChangeTimeZone = (timeZone) => {
-    setTimeZone(timeZone);
+    setTimeZone(Number(timeZone));
     setClock((prevState) => ({
       ...prevState,
       timeZone: timeZone,

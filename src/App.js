@@ -5,7 +5,7 @@ import Clocks from './components/Clocks';
 import { useState } from 'react';
 
 const initialState = [
-  { id: 'c1', name: 'Москва', timeZone: '-3' },
+  { id: 'c1', name: 'Москва', timeZone: '+3' },
   { id: 'c2', name: 'London', timeZone: '0' },
 ];
 
